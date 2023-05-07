@@ -50,17 +50,12 @@ const Main = () => {
         </Stack>
       </Stack>
       <StackContainer>
-        <Stack mr={7}>
+        <Stack mr={7} width={"100%"} maxWidth={600}>
           <Tooltip
             title="A connected team discussing work in multiple channels in the Slack app"
             placement="right"
           >
-            <video
-              src={slackVid2}
-              style={{ width: "100%", maxWidth: 600 }}
-              autoPlay
-              loop
-            />
+            <video src={slackVid2} autoPlay loop />
           </Tooltip>
         </Stack>
         <Stack m={"0 auto"} maxWidth={500}>
@@ -88,17 +83,12 @@ const Main = () => {
         </Stack>
       </StackContainer>
       <StackContainer>
-        <Stack order={1}>
+        <Stack order={1} width={"100%"} maxWidth={600}>
           <Tooltip
             title="A user starting a huddle and recording a video clip the Slack app"
             placement="left"
           >
-            <video
-              src={slackVid3}
-              style={{ width: "100%", maxWidth: 600 }}
-              autoPlay
-              loop
-            />
+            <video src={slackVid3} autoPlay loop />
           </Tooltip>
         </Stack>
         <Stack m={"0 auto"} maxWidth={500} order={0}>
@@ -126,17 +116,12 @@ const Main = () => {
         </Stack>
       </StackContainer>
       <StackContainer>
-        <Stack mr={7}>
+        <Stack mr={7} width={"100%"} maxWidth={600}>
           <Tooltip
             title="Using the Workday integration to quickly file an expense report in the Slack app"
             placement="right"
           >
-            <video
-              src={slackVid4}
-              style={{ width: "100%", maxWidth: 600 }}
-              autoPlay
-              loop
-            />
+            <video src={slackVid4} autoPlay loop />
           </Tooltip>
         </Stack>
         <Stack m={"0 auto"} maxWidth={500}>
