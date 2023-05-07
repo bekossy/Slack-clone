@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Support from "./components/Support";
+import Explore from "./components/Explore";
 
 function App() {
   const theme = createTheme({
@@ -32,6 +33,7 @@ function App() {
           </Box>
           <Main />
           <Support />
+          <Explore />
         </Box>
       </ThemeProvider>
     </>
