@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Typography, styled } from "@mui/material";
+import { Box, Link, Stack, Tooltip, Typography, styled } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import airbnb from "../assets/airbnb-logo.png";
 import etsy from "../assets/etsy-logo.png";
@@ -51,12 +51,17 @@ const Main = () => {
       </Stack>
       <StackContainer>
         <Stack mr={7}>
-          <video
-            src={slackVid2}
-            style={{ width: "100%", maxWidth: 600 }}
-            autoPlay
-            loop
-          />
+          <Tooltip
+            title="A connected team discussing work in multiple channels in the Slack app"
+            placement="right"
+          >
+            <video
+              src={slackVid2}
+              style={{ width: "100%", maxWidth: 600 }}
+              autoPlay
+              loop
+            />
+          </Tooltip>
         </Stack>
         <Stack m={"0 auto"} maxWidth={500}>
           <Typography variant="h3" fontWeight={700} gutterBottom>
@@ -84,12 +89,17 @@ const Main = () => {
       </StackContainer>
       <StackContainer>
         <Stack order={1}>
-          <video
-            src={slackVid3}
-            style={{ width: "100%", maxWidth: 600 }}
-            autoPlay
-            loop
-          />
+          <Tooltip
+            title="A user starting a huddle and recording a video clip the Slack app"
+            placement="left"
+          >
+            <video
+              src={slackVid3}
+              style={{ width: "100%", maxWidth: 600 }}
+              autoPlay
+              loop
+            />
+          </Tooltip>
         </Stack>
         <Stack m={"0 auto"} maxWidth={500} order={0}>
           <Typography variant="h3" fontWeight={700} gutterBottom>
@@ -117,12 +127,17 @@ const Main = () => {
       </StackContainer>
       <StackContainer>
         <Stack mr={7}>
-          <video
-            src={slackVid4}
-            style={{ width: "100%", maxWidth: 600 }}
-            autoPlay
-            loop
-          />
+          <Tooltip
+            title="Using the Workday integration to quickly file an expense report in the Slack app"
+            placement="right"
+          >
+            <video
+              src={slackVid4}
+              style={{ width: "100%", maxWidth: 600 }}
+              autoPlay
+              loop
+            />
+          </Tooltip>
         </Stack>
         <Stack m={"0 auto"} maxWidth={500}>
           <Typography variant="h3" fontWeight={700} gutterBottom>
