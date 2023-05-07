@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Support from "./components/Support";
 import Explore from "./components/Explore";
+import Footer from "./components/Footer";
 
 function App() {
   const theme = createTheme({
@@ -34,6 +35,7 @@ function App() {
           <Main />
           <Support />
           <Explore />
+          <Footer />
         </Box>
       </ThemeProvider>
     </>
