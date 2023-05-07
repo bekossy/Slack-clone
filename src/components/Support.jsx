@@ -1,10 +1,20 @@
-import { Box, Button, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Button,
+  Link,
+  Stack,
+  Tooltip,
+  Typography,
+  styled,
+} from "@mui/material";
+import EastIcon from "@mui/icons-material/East";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import ImageIcon from "@mui/icons-material/Image";
 import HttpsIcon from "@mui/icons-material/Https";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import slackVid5 from "../assets/StackVid5.mp4";
 import React from "react";
 
 const Support = () => {
@@ -28,6 +38,12 @@ const Support = () => {
     borderRadius: 20,
     position: "absolute",
   }));
+
+  const StackContainer = styled(Stack)({
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: "100px auto",
+  });
 
   return (
     <Box>
@@ -127,8 +143,56 @@ const Support = () => {
         </Stack>
       </Stack>
 
-        
+      <StackContainer>
+        <Stack maxWidth={600} mr={4} width={"100%"}>
+          <Tooltip title="Video featuring a Slack customer" placement="right">
+            <video
+              src={slackVid5}
+              autoPlay
+              loop
+              style={{
+                borderTopRightRadius: "250px",
+                borderBottomRightRadius: "250px",
+              }}
+            />
+          </Tooltip>
+        </Stack>
+        <Stack maxWidth={500} m={"0 auto"}>
+          <Typography variant="h4" fontWeight={300} fontStyle={"italic"} mb={2}>
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Laboriosam veniam ex at asperiores iste mollitia ipsam soluta rem,
+            animi laudan Lorem"
+          </Typography>
+          <Typography fontWeight={"bold"}>Anne Johnson</Typography>
+          <Typography variant={"body1"} mb={2}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+            voluptatem suscipit libero dicta.
+          </Typography>
+          <Link
+            underline="hover"
+            sx={{
+              color: "#097eff",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Typography mr>See more customer stories</Typography>
+            <EastIcon />
+          </Link>
+        </Stack>
+      </StackContainer>
 
+      <Typography
+        variant="body2"
+        textAlign={"center"}
+        sx={{ color: "#999" }}
+        my={2}
+      >
+        * Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+        voluptatum quidem obcaecati ipsam iusto! Ex aspernatur commodi facilis
+        quis! Quisquam
+      </Typography>
     </Box>
   );
 };
