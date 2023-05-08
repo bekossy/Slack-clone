@@ -186,7 +186,7 @@ const Support = () => {
       <Typography
         variant="body2"
         textAlign={"center"}
-        sx={{ color: "#999" }}
+        sx={{ color: "#696969" }}
         my={2}
       >
         * Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
