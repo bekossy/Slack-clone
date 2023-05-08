@@ -18,10 +18,12 @@ function App() {
     },
     breakpoints: {
       values: {
+        xs: 0,
         navContainer: 1085,
         leftBtn: 1215,
         headerBtn: 1170,
         mainSection: 1020,
+        supportBtn: 768,
       },
     },
   });

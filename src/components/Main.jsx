@@ -17,7 +17,6 @@ const Main = () => {
   });
 
   const StackContainer = styled(Stack)(({ theme }) => ({
-    flexDirection: "column",
     justifyContent: "space-between",
     margin: "70px auto",
     [theme.breakpoints.up("mainSection")]: {

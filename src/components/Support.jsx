@@ -18,7 +18,7 @@ import slackVid5 from "../assets/StackVid5.mp4";
 import React from "react";
 
 const Support = () => {
-  const Btn = styled(Button)({
+  const Btn = styled(Button)(({ theme }) => ({
     textTransform: "uppercase",
     padding: "15px 40px",
     border: "1px solid #541554",
@@ -26,8 +26,12 @@ const Support = () => {
     fontSize: 15,
     fontWeight: 600,
     cursor: "pointer",
+    margin: "10px 0",
     transition: "all 0.3s ease-in-out",
-  });
+    [theme.breakpoints.down("supportBtn")]: {
+      width: "100%",
+    },
+  }));
 
   const Icons = styled(Box)(({ theme }) => ({
     boxShadow: theme.shadows[1],
@@ -37,27 +41,32 @@ const Support = () => {
     padding: "10px 20px",
     borderRadius: 20,
     position: "absolute",
+    [theme.breakpoints.down("mainSection")]: {
+      display: "none",
+    },
   }));
 
-  const StackContainer = styled(Stack)({
-    flexDirection: "row",
+  const StackContainer = styled(Stack)(({ theme }) => ({
     justifyContent: "space-between",
     margin: "100px auto",
-  });
+    [theme.breakpoints.up("mainSection")]: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+  }));
 
   return (
     <Box>
-      <Box m={"60px auto"} textAlign={"center"} position={"relative"} p={6}>
+      <Box m={"30px auto"} textAlign={"center"} position={"relative"} p={6}>
         <Typography variant="h3" fontWeight={700} mb={3}>
           Teams large and small rely on Slack
         </Typography>
-        <Typography variant="body1" fontWeight={500} letterSpacing={1} mb={5}>
+        <Typography variant="body1" fontWeight={500} letterSpacing={1} mb={3}>
           Slack securely scales up to support collaboration at the world’s
           biggest companies.
         </Typography>
         <Stack
-          direction={"row"}
-          alignItems={"center"}
+          direction={{ xs: "column", supportBtn: "row" }}
           justifyContent={"center"}
         >
           <Btn
@@ -112,12 +121,17 @@ const Support = () => {
       </Box>
 
       <Stack
-        direction={"row"}
+        direction={{ xs: "column", supportBtn: "row" }}
+        alignItems={"center"}
         justifyContent={"space-around"}
-        m={"50px auto"}
+        m={"30px auto"}
         p={"0 50px"}
       >
-        <Stack maxWidth={200}>
+        <Stack
+          maxWidth={200}
+          my={2}
+          textAlign={{ xs: "center", supportBtn: "left" }}
+        >
           <Typography variant="h2" fontWeight={700} color={"primary"}>
             85%
           </Typography>
@@ -125,7 +139,11 @@ const Support = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing*
           </Typography>
         </Stack>
-        <Stack maxWidth={200}>
+        <Stack
+          maxWidth={200}
+          my={2}
+          textAlign={{ xs: "center", supportBtn: "left" }}
+        >
           <Typography variant="h2" fontWeight={700} color={"primary"}>
             86%
           </Typography>
@@ -133,7 +151,11 @@ const Support = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing*
           </Typography>
         </Stack>
-        <Stack maxWidth={200}>
+        <Stack
+          maxWidth={200}
+          my={2}
+          textAlign={{ xs: "center", supportBtn: "left" }}
+        >
           <Typography variant="h2" fontWeight={700} color={"primary"}>
             88%
           </Typography>
@@ -144,7 +166,7 @@ const Support = () => {
       </Stack>
 
       <StackContainer>
-        <Stack maxWidth={600} mr={4} width={"100%"}>
+        <Stack maxWidth={600} mr={"auto"} width={"100%"}>
           <Tooltip title="Video featuring a Slack customer" placement="right">
             <video
               src={slackVid5}
@@ -157,7 +179,7 @@ const Support = () => {
             />
           </Tooltip>
         </Stack>
-        <Stack maxWidth={500} m={"0 auto"}>
+        <Stack maxWidth={{ xs: 600, mainSection: 900 }} m={"0 auto"} p={2}>
           <Typography variant="h4" fontWeight={300} fontStyle={"italic"} mb={2}>
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Laboriosam veniam ex at asperiores iste mollitia ipsam soluta rem,
