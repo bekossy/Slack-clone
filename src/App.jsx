@@ -16,12 +16,12 @@ function App() {
         main: "#ffffff",
       },
     },
-    // breakpoints: {
-    //   values: {
-    //     md: 1085,
-    //     lg: 1200,
-    //   },
-    // },
+    breakpoints: {
+      values: {
+        navContainer: 1085,
+        leftBtn: 1215,
+      },
+    },
   });
 
   return (

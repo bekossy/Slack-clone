@@ -13,7 +13,8 @@ import {
 import slackLogo from "../assets/slackLogo.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+// import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -27,6 +28,14 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const StackContainer = styled(Stack)(({ theme }) => ({
+    flexDirection: "row",
+    alignItems: "center",
+    [theme.breakpoints.down("navContainer")]: {
+      display: "none",
+    },
+  }));
 
   const NavBox = styled(Box)({
     display: "flex",
@@ -42,17 +51,59 @@ const Navbar = () => {
     flexDirection: "row",
     color: "white",
   });
-  const RightBtns = styled(Button)({
+  const RightBtns = styled(Button)(({ theme }) => ({
     margin: "0 10px",
     padding: "6px 16px",
     fontSize: 15,
-  });
+    color: "#541554",
+    backgroundColor: "white",
+    border: "1px solid #fff",
+    "&:hover": {
+      border: "1px solid #541554",
+      backgroundColor: "white",
+    },
+    [theme.breakpoints.down("navContainer")]: {
+      display: "none",
+    },
+  }));
+  const LeftBtns = styled(Button)(({ theme }) => ({
+    margin: "0 10px",
+    padding: "6px 16px",
+    fontSize: 15,
+    outline: "1px solid #fff",
+    color: "#fff",
+    "&:hover": {
+      outline: "2px solid #fff",
+    },
+    [theme.breakpoints.down("leftBtn")]: {
+      display: "none",
+    },
+  }));
   const NavLink = styled(Link)({
     fontSize: 15,
     fontWeight: 600,
     cursor: "pointer",
     color: "#fff",
+    padding: "0 10px",
   });
+  const AuthLink = styled(Link)(({ theme }) => ({
+    fontSize: 15,
+    fontWeight: 600,
+    cursor: "pointer",
+    color: "#fff",
+    padding: "0 10px",
+    margin: "0 25px",
+    [theme.breakpoints.down("navContainer")]: {
+      display: "none",
+    },
+  }));
+  const MenuBox = styled(Box)(({ theme }) => ({
+    display: "none",
+    marginLeft: "20px",
+    [theme.breakpoints.down("navContainer")]: {
+      display: "block",
+    },
+  }));
   return (
     <>
       <NavBox>
@@ -68,17 +119,7 @@ const Navbar = () => {
               slack
             </Typography>
           </Stack>
-          <Stack
-            direction={"row"}
-            alignItems={"center"}
-            spacing={3}
-            sx={{
-              display: {
-                xs: "none",
-                md: "block",
-              },
-            }}
-          >
+          <StackContainer>
             <Button
               endIcon={<KeyboardArrowDownIcon />}
               sx={{
@@ -100,7 +141,7 @@ const Navbar = () => {
             <NavLink underline="hover">Enterprise</NavLink>
             <NavLink underline="hover">Resources</NavLink>
             <NavLink underline="hover">Pricing</NavLink>
-          </Stack>
+          </StackContainer>
           <Menu
             id="product-menu"
             anchorEl={anchorEl}
@@ -117,45 +158,16 @@ const Navbar = () => {
         <NavContainer>
           <SearchIcon sx={{ cursor: "pointer" }} />
 
-          <NavLink
-            underline="hover"
-            sx={{
-              m: "0 25px",
-            }}
-          >
-            Sign in
-          </NavLink>
+          <MenuBox>
+            <MenuIcon sx={{ cursor: "pointer" }} />
+          </MenuBox>
 
-          <RightBtns
-            disableElevation
-            variant="outlined"
-            sx={{
-              outline: "1px solid #fff",
-              color: "#fff",
-              display: {
-                xs: "none",
-                lg: "block",
-              },
-              "&:hover": {
-                outline: "2px solid #fff",
-              },
-            }}
-          >
+          <AuthLink underline="hover">Sign in</AuthLink>
+
+          <LeftBtns disableElevation variant="outlined">
             talk to sales
-          </RightBtns>
-          <RightBtns
-            disableElevation
-            variant="contained"
-            sx={{
-              color: "#541554",
-              bgcolor: "white",
-              border: "1px solid #fff",
-              "&:hover": {
-                border: "1px solid #541554",
-                bgcolor: "white",
-              },
-            }}
-          >
+          </LeftBtns>
+          <RightBtns disableElevation variant="contained">
             try for free
           </RightBtns>
         </NavContainer>
