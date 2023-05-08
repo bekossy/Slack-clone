@@ -24,6 +24,7 @@ function App() {
         headerBtn: 1170,
         mainSection: 1020,
         supportBtn: 768,
+        footerLinks: 480,
       },
     },
   });

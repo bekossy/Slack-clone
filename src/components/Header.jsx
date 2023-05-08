@@ -8,6 +8,10 @@ const Header = () => {
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.primary.main,
     padding: "15px 40px",
+    marginBottom: 10,
+    [theme.breakpoints.down("headerBtn")]: {
+      width: "100%",
+    },
   }));
   return (
     <Stack
@@ -37,7 +41,7 @@ const Header = () => {
           rest. That’s work in Slack, your productivity platform.
         </Typography>
 
-        <Stack direction={"row"} mb={2}>
+        <Stack direction={{ xs: "column", headerBtn: "row" }} mb={2}>
           <Btn
             disableElevation
             sx={{
@@ -68,7 +72,11 @@ const Header = () => {
             Sign up with google
           </Btn>
         </Stack>
-        <Typography color={"secondary"} variant="h6">
+        <Typography
+          color={"secondary"}
+          variant="h6"
+          display={{ xs: "none", mainSection: "block" }}
+        >
           Slack is free to try for as long as you'd like
         </Typography>
       </Stack>
