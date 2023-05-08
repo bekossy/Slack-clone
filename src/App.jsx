@@ -20,6 +20,8 @@ function App() {
       values: {
         navContainer: 1085,
         leftBtn: 1215,
+        headerBtn: 1170,
+        mainSection: 1020,
       },
     },
   });

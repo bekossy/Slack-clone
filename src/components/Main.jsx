@@ -13,15 +13,18 @@ import React from "react";
 
 const Main = () => {
   const BrandLogo = styled("img")({
-    margin: "0 35px",
+    margin: "10px 35px",
   });
 
-  const StackContainer = styled(Stack)({
-    flexDirection: "row",
-    alignItems: "center",
+  const StackContainer = styled(Stack)(({ theme }) => ({
+    flexDirection: "column",
     justifyContent: "space-between",
     margin: "70px auto",
-  });
+    [theme.breakpoints.up("mainSection")]: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+  }));
 
   return (
     <Box sx={{ backgroundColor: "#F4EDE4", py: 6 }}>
@@ -50,7 +53,7 @@ const Main = () => {
         </Stack>
       </Stack>
       <StackContainer>
-        <Stack mr={7} width={"100%"} maxWidth={600}>
+        <Stack mr={"auto"} width={"100%"} maxWidth={600}>
           <Tooltip
             title="A connected team discussing work in multiple channels in the Slack app"
             placement="right"
@@ -58,8 +61,8 @@ const Main = () => {
             <video src={slackVid2} autoPlay loop />
           </Tooltip>
         </Stack>
-        <Stack m={"0 auto"} maxWidth={500}>
-          <Typography variant="h3" fontWeight={700} gutterBottom>
+        <Stack m={"0 auto"} maxWidth={500} p={2}>
+          <Typography variant="h3" fontWeight={700} my={2}>
             Bring your team together
           </Typography>
           <Typography variant="body1" fontWeight={500} mb={2}>
@@ -83,7 +86,12 @@ const Main = () => {
         </Stack>
       </StackContainer>
       <StackContainer>
-        <Stack order={1} width={"100%"} maxWidth={600}>
+        <Stack
+          order={{ xs: 0, mainSection: 1 }}
+          width={"100%"}
+          maxWidth={600}
+          ml={"auto"}
+        >
           <Tooltip
             title="A user starting a huddle and recording a video clip the Slack app"
             placement="left"
@@ -91,8 +99,13 @@ const Main = () => {
             <video src={slackVid3} autoPlay loop />
           </Tooltip>
         </Stack>
-        <Stack m={"0 auto"} maxWidth={500} order={0}>
-          <Typography variant="h3" fontWeight={700} gutterBottom>
+        <Stack
+          m={"0 auto"}
+          p={2}
+          maxWidth={500}
+          order={{ xs: 1, mainSection: 0 }}
+        >
+          <Typography variant="h3" fontWeight={700} my={2}>
             Bring your team together
           </Typography>
           <Typography variant="body1" fontWeight={500} mb={2}>
@@ -116,7 +129,7 @@ const Main = () => {
         </Stack>
       </StackContainer>
       <StackContainer>
-        <Stack mr={7} width={"100%"} maxWidth={600}>
+        <Stack mr={"auto"} width={"100%"} maxWidth={600}>
           <Tooltip
             title="Using the Workday integration to quickly file an expense report in the Slack app"
             placement="right"
@@ -124,8 +137,8 @@ const Main = () => {
             <video src={slackVid4} autoPlay loop />
           </Tooltip>
         </Stack>
-        <Stack m={"0 auto"} maxWidth={500}>
-          <Typography variant="h3" fontWeight={700} gutterBottom>
+        <Stack m={"0 auto"} maxWidth={500} p={2}>
+          <Typography variant="h3" fontWeight={700} my={2}>
             Move faster with your tools in one place
           </Typography>
           <Typography variant="body1" fontWeight={500} mb={2}>
