@@ -13,14 +13,24 @@ const Header = () => {
       width: "100%",
     },
   }));
+
+  const Video = styled("video")(({ theme }) => ({
+    [theme.breakpoints.up("supportBtn")]: {
+      left: 0,
+    },
+    [theme.breakpoints.down("supportBtn")]: {
+      top: 0,
+    },
+  }));
   return (
     <Stack
-      direction={"row"}
+      direction={{ xs: "column", supportBtn: "row" }}
       justifyContent={"space-between"}
       mt={6}
-      alignItems={"center"}
+      alignItems={{ xs: "center", supportBtn: "" }}
       padding={"0 0 100px 50px"}
       overflow={"hidden"}
+      height={{ xs: "900px", supportBtn: "" }}
     >
       <Stack flex={1} mr={5}>
         <Typography variant="h2" fontWeight={600} color={"secondary"}>
@@ -86,9 +96,10 @@ const Header = () => {
           flexDirection: "row",
           flex: 1,
           position: "relative",
+          justifyContent: { xs: "center", supportBtn: "" },
         }}
       >
-        <video
+        <Video
           src={StackVid}
           style={{
             width: "700px",
