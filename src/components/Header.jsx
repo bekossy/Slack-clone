@@ -28,7 +28,7 @@ const Header = () => {
       justifyContent={"space-between"}
       mt={6}
       alignItems={{ xs: "center", supportBtn: "" }}
-      padding={"0 0 100px 50px"}
+      padding={{ xs: "0 0 25px 20px", mainSection: "0 0 100px 50px" }}
       overflow={"hidden"}
       height={{ xs: "900px", supportBtn: "" }}
     >

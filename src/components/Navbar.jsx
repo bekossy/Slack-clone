@@ -1,32 +1,10 @@
-import {
-  Box,
-  Button,
-  Link,
-  Menu,
-  MenuItem,
-  Stack,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Button, Link, Stack, Typography, styled } from "@mui/material";
 import slackLogo from "../assets/slackLogo.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-// import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const open = Boolean(anchorEl);
-
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const StackContainer = styled(Stack)(({ theme }) => ({
     flexDirection: "row",
     alignItems: "center",
@@ -35,14 +13,17 @@ const Navbar = () => {
     },
   }));
 
-  const NavBox = styled(Box)({
+  const NavBox = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
     backgroundColor: "#541554",
-    padding: "20px 50px",
-  });
+    padding: "20px",
+    [theme.breakpoints.up("mainSection")]: {
+      padding: "20px 50px",
+    },
+  }));
   const NavContainer = styled(Box)({
     display: "flex",
     alignItems: "center",
@@ -127,11 +108,6 @@ const Navbar = () => {
                 fontWeight: 600,
                 cursor: "pointer",
               }}
-              id="product-btn"
-              onClick={handleClick}
-              aria-controls={open ? "resources-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
             >
               Product
             </Button>
@@ -140,18 +116,6 @@ const Navbar = () => {
             <NavLink underline="hover">Resources</NavLink>
             <NavLink underline="hover">Pricing</NavLink>
           </StackContainer>
-          <Menu
-            id="product-menu"
-            anchorEl={anchorEl}
-            open={open}
-            MenuListProps={{
-              "aria-labelledby": "resources-btn",
-            }}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleClose}>Blog</MenuItem>
-            <MenuItem onClick={handleClose}>Podcast</MenuItem>
-          </Menu>
         </NavContainer>
         <NavContainer>
           <SearchIcon sx={{ cursor: "pointer" }} />
