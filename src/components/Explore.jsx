@@ -32,7 +32,7 @@ const Explore = () => {
         Take a deeper dive into a new way to work
       </Typography>
 
-      <Grid container maxWidth={1150} justifyContent={"center"}>
+      <Grid container maxWidth={1150} justifyContent={"center"} m={"0 auto"}>
         <GridItem item>
           <Stack>
             <img
