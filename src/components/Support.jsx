@@ -170,6 +170,7 @@ const Support = () => {
           <Tooltip title="Video featuring a Slack customer" placement="right">
             <video
               src={slackVid5}
+              controls={false}
               autoPlay
               loop
               style={{
