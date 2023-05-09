@@ -1,12 +1,9 @@
-import {
-  Box,
-  Grid,
-  Stack,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Grid, Stack, Typography, styled } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import stateOfWork from "../assets/state-of-work.jpg";
+import worldTour from "../assets/world-tour.jpg";
+import openAi from "../assets/promo-open-ai.jpg";
+import promoBoost from "../assets/promo-boost-productivity.jpg";
 import React from "react";
 
 const Explore = () => {
@@ -22,9 +19,9 @@ const Explore = () => {
     flexDirection: "column",
     cursor: "pointer",
     transition: "all 0.2s ease-in-out",
-    boxShadow: theme.shadows[3],
+    boxShadow: theme.shadows[2],
     "&:hover": {
-      boxShadow: theme.shadows[10],
+      boxShadow: theme.shadows[5],
       transform: "scale(1.08)",
     },
   }));
@@ -65,7 +62,7 @@ const Explore = () => {
         <GridItem item>
           <Stack>
             <img
-              src={stateOfWork}
+              src={worldTour}
               alt=""
               style={{ width: "100%", height: "180px" }}
             />
@@ -91,7 +88,7 @@ const Explore = () => {
         <GridItem item>
           <Stack>
             <img
-              src={stateOfWork}
+              src={openAi}
               alt=""
               style={{ width: "100%", height: "180px" }}
             />
@@ -117,7 +114,7 @@ const Explore = () => {
         <GridItem item>
           <Stack>
             <img
-              src={stateOfWork}
+              src={promoBoost}
               alt=""
               style={{ width: "100%", height: "180px" }}
             />
